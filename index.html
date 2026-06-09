@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Manual de Usuario · RAE UTP</title>
+<title>Registro de Actividades y Eventos UTP · Manual de Usuario</title>
 <style>
   :root{
     --navy:#10316b;
@@ -45,10 +45,11 @@
   }
   .sidebar .brand{display:flex;align-items:center;gap:12px;margin-bottom:6px}
   .sidebar .brand .logo{
-    width:42px;height:42px;border-radius:11px;background:#fff;color:var(--navy);
-    display:grid;place-items:center;font-weight:800;letter-spacing:.5px;font-size:15px;
+    width:42px;height:42px;border-radius:11px;background:#fff;
+    display:grid;place-items:center;overflow:hidden;
     box-shadow:0 6px 18px -8px rgba(0,0,0,.6);
   }
+  .sidebar .brand .logo img{width:100%;height:100%;object-fit:contain;padding:3px}
   .sidebar .brand b{font-size:15px;color:#fff;display:block;line-height:1.2}
   .sidebar .brand span{font-size:12px;color:#9db6e6}
   .toc{margin-top:26px;list-style:none;padding:0;counter-reset:toc}
@@ -62,6 +63,9 @@
   .toc a.active{background:var(--accent);color:#fff}
   .toc a.active .n{color:#cfe0ff}
   .sidebar .foot{margin-top:30px;font-size:11.5px;color:#7e97c6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+  .sidebar .foot-logos{display:flex;flex-direction:column;gap:14px;align-items:flex-start;margin-bottom:14px}
+  .sidebar .foot-logo{max-width:155px;height:auto;display:block;opacity:.95}
+  .sidebar .foot-logo.gtisi{height:44px;width:auto;max-width:none;filter:brightness(0) invert(1)}
 
   .main{flex:1 1 auto;min-width:0}
   .wrap{max-width:920px;margin:0 auto;padding:0 28px 90px}
@@ -78,22 +82,26 @@
     background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);border-radius:50%;
   }
   .cover .inner{max-width:920px;margin:0 auto;position:relative;z-index:1}
+  .cover-logo{height:86px;width:auto;display:block;filter:brightness(0) invert(1);flex:0 0 auto}
+  .cover-row{display:flex;align-items:center;justify-content:space-between;gap:26px;margin:20px 0 26px;flex-wrap:wrap}
+  .cover-textcol{text-align:right;max-width:560px}
+  .cover-row .subtitle{margin:0 0 6px}
+  .cover-row p{margin:0;max-width:none}
   .cover .kicker{
     display:inline-block;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;
     color:#9fc0ff;border:1px solid rgba(159,192,255,.4);padding:6px 13px;border-radius:999px;margin-bottom:22px;
   }
   .cover h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:0 0 14px;letter-spacing:-.5px;font-weight:800}
+  .cover .subtitle{font-size:23px;font-weight:600;color:#fff;margin:0 0 14px;letter-spacing:-.2px}
   .cover p{font-size:18px;color:#cfdcf4;max-width:620px;margin:0 0 26px}
   .cover .meta{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:#a8bce4}
   .cover .meta b{color:#fff;font-weight:600}
 
   /* ---------- Sections ---------- */
   section{scroll-margin-top:18px;margin-bottom:54px}
-  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-  .sec-head .num{
-    flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--navy);
-    display:grid;place-items:center;font-weight:800;font-size:18px;
-  }
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+  .sec-head .num{flex:0 0 auto;color:var(--accent);font-weight:800;font-size:26px;line-height:1.1}
+  .sec-head .num::after{content:"."}
   .sec-head h2{margin:0;font-size:26px;letter-spacing:-.3px;color:var(--navy)}
   .lead{font-size:17px;color:#33425a}
 
@@ -105,6 +113,34 @@
   ul,ol{padding-left:20px;margin:10px 0}
   li{margin:5px 0}
   .muted{color:var(--muted)}
+
+  /* glosario */
+  .glossary{margin:6px 0 0}
+  .glossary .gitem{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .glossary .gitem:last-child{border-bottom:0}
+  .glossary dt{font-weight:700;color:var(--navy)}
+  .glossary dd{margin:0;color:#33425a}
+  @media(max-width:600px){.glossary .gitem{grid-template-columns:1fr;gap:3px}}
+
+  /* descarga (QR) */
+  .download{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .store{text-align:center;border:1px solid var(--line);border-radius:14px;padding:22px 18px;background:#fbfcfe}
+  .store .qr{width:188px;height:188px;margin:0 auto 14px;border-radius:12px;background:#fff;padding:8px;border:1px solid var(--line)}
+  .store .qr img{width:100%;height:100%;display:block}
+  .store .name{font-weight:700;color:var(--navy);font-size:16px}
+  .store .sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .store a.link{display:inline-block;margin-top:12px;font-size:13px;font-weight:600}
+  @media(max-width:600px){.download{grid-template-columns:1fr}}
+
+  /* guía de documentos (cédulas) */
+  .docs-guide{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:16px 0 4px}
+  .docfig{margin:0}
+  .docfig .docimg{position:relative;border-radius:12px;overflow:hidden;border:2px solid var(--accent);box-shadow:var(--shadow);background:#fff}
+  .docfig .docimg img{display:block;width:100%}
+  .docfig .badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:999px;box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+  .docfig figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);text-align:center}
+  .docfig figcaption b{display:block;color:var(--text);font-size:14px}
+  @media(max-width:560px){.docs-guide{grid-template-columns:1fr}}
 
   /* steps */
   ol.steps{counter-reset:step;list-style:none;padding:0}
@@ -206,23 +242,30 @@
   <!-- ============ SIDEBAR ============ -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="logo">RAE</div>
-      <div><b>Manual de Usuario</b><span>Aplicativo RAE · UTP</span></div>
+      <div class="logo"><img src="assets/logo.png" alt="RAE" /></div>
+      <div><b>Registro de Actividades y Eventos</b><span>Manual de Usuario · UTP</span></div>
     </div>
     <nav>
       <ul class="toc" id="toc">
         <li><a href="#alcance"><span class="n">1</span> Alcance</a></li>
-        <li><a href="#objetivos"><span class="n">2</span> Objetivos</a></li>
-        <li><a href="#roles"><span class="n">3</span> Roles y permisos</a></li>
-        <li><a href="#auth"><span class="n">4</span> Autenticación</a></li>
-        <li><a href="#participante"><span class="n">5</span> Funciones · Participante</a></li>
-        <li><a href="#staff"><span class="n">6</span> Funciones · Staff</a></li>
-        <li><a href="#perfil"><span class="n">7</span> Perfil</a></li>
-        <li><a href="#faq"><span class="n">8</span> Preguntas frecuentes</a></li>
-        <li><a href="#soporte"><span class="n">9</span> Soporte y ayuda</a></li>
+        <li><a href="#descarga"><span class="n">2</span> Descarga</a></li>
+        <li><a href="#glosario"><span class="n">3</span> Glosario</a></li>
+        <li><a href="#objetivos"><span class="n">4</span> Objetivos</a></li>
+        <li><a href="#roles"><span class="n">5</span> Roles y permisos</a></li>
+        <li><a href="#auth"><span class="n">6</span> Autenticación</a></li>
+        <li><a href="#participante"><span class="n">7</span> Funciones · Participante</a></li>
+        <li><a href="#staff"><span class="n">8</span> Funciones · Coordinador</a></li>
+        <li><a href="#perfil"><span class="n">9</span> Perfil</a></li>
+        <li><a href="#faq"><span class="n">10</span> Preguntas frecuentes</a></li>
       </ul>
     </nav>
-    <div class="foot">UTP · GTISI<br>2026 · Versión 1.0</div>
+    <div class="foot">
+      <div class="foot-logos">
+        <img class="foot-logo gtisi" src="assets/logo.svg" alt="GTISI · Gestión de Tecnologías" />
+        <img class="foot-logo" src="assets/ministerioeducacion.png" alt="Ministerio de Educación Nacional" />
+      </div>
+      <div>2026 · Versión 1.0</div>
+    </div>
   </aside>
 
   <!-- ============ MAIN ============ -->
@@ -232,25 +275,30 @@
       <select onchange="if(this.value)location.hash=this.value">
         <option value="">Ir a…</option>
         <option value="#alcance">1 · Alcance</option>
-        <option value="#objetivos">2 · Objetivos</option>
-        <option value="#roles">3 · Roles y permisos</option>
-        <option value="#auth">4 · Autenticación</option>
-        <option value="#participante">5 · Participante</option>
-        <option value="#staff">6 · Staff</option>
-        <option value="#perfil">7 · Perfil</option>
-        <option value="#faq">8 · Preguntas frecuentes</option>
-        <option value="#soporte">9 · Soporte</option>
+        <option value="#descarga">2 · Descarga</option>
+        <option value="#glosario">3 · Glosario</option>
+        <option value="#objetivos">4 · Objetivos</option>
+        <option value="#roles">5 · Roles y permisos</option>
+        <option value="#auth">6 · Autenticación</option>
+        <option value="#participante">7 · Participante</option>
+        <option value="#staff">8 · Coordinador</option>
+        <option value="#perfil">9 · Perfil</option>
+        <option value="#faq">10 · Preguntas frecuentes</option>
       </select>
     </div>
 
     <!-- COVER -->
     <header class="cover" id="top">
       <div class="inner">
-        <span class="kicker">Aplicativo RAE · UTP</span>
-        <h1>Manual de Usuario</h1>
-        <p>Consulta de eventos y toma de asistencia desde tu dispositivo móvil. Guía paso a paso para participantes y personal de apoyo.</p>
+        <h1>Registro de Actividades y Eventos (RAE) UTP</h1>
+        <div class="cover-row">
+          <img class="cover-logo" src="assets/logo.svg" alt="Logo UTP" />
+          <div class="cover-textcol">
+            <p class="subtitle">Manual de Usuario</p>
+            <p>Consulta de eventos y toma de asistencia desde tu dispositivo móvil. Guía paso a paso para participantes y Coordinadores.</p>
+          </div>
+        </div>
         <div class="meta">
-          <div>Desarrollado por <b>GTISI</b></div>
           <div>Año <b>2026</b></div>
           <div>Versión <b>1.0</b></div>
         </div>
@@ -263,12 +311,12 @@
       <section id="alcance">
         <div class="sec-head"><div class="num">1</div><h2>Alcance del aplicativo</h2></div>
         <div class="card">
-          <p class="lead">El aplicativo RAE permite a la comunidad universitaria <b>consultar los eventos y actividades</b> en los que participa, <b>acceder a su código QR personal de ingreso</b> y, al personal autorizado, <b>tomar la asistencia</b> de los participantes a cada sesión —escaneando el QR del asistente, leyendo su documento de identidad o marcando manualmente sobre la lista de inscritos.</p>
+          <p class="lead">El aplicativo RAE permite a la comunidad universitaria <b>consultar los eventos y actividades en los que ya está inscrito</b>, <b>acceder a su código QR personal de ingreso</b> y, al personal autorizado, <b>tomar la asistencia</b> de los participantes a cada actividad —escaneando el QR del asistente, leyendo su documento de identidad o marcando manualmente sobre la lista de inscritos.</p>
           <div style="margin-top:22px">
             <div class="scope in">
-              <h4>Qué cubre este manual</h4>
+              <h4>¿Qué cubre este manual?</h4>
               <ul>
-                <li>Consulta de eventos y actividades.</li>
+                <li>Consulta de los eventos y actividades en los que ya está inscrito.</li>
                 <li>Código QR personal de ingreso.</li>
                 <li>Toma de asistencia por QR, por documento de identidad y manual.</li>
                 <li>Lectura de cédula física, cédula digital y carnet UTP.</li>
@@ -278,15 +326,59 @@
         </div>
       </section>
 
-      <!-- 2. OBJETIVOS -->
+      <!-- 2. DESCARGA -->
+      <section id="descarga">
+        <div class="sec-head"><div class="num">2</div><h2>Descarga la aplicación</h2></div>
+        <div class="card">
+          <p class="lead" style="margin-top:0">Escanea el código con la cámara de tu teléfono para descargar la app, o toca el enlace.</p>
+          <div class="download">
+            <div class="store">
+              <div class="qr"><img src="assets/qr-appstore.png" alt="Código QR para descargar en App Store" /></div>
+              <div class="name">🍏 App Store</div>
+              <div class="sub">iPhone · iOS</div>
+              <a class="link" href="https://apps.apple.com/co/app/rae-utp/id6502660248" target="_blank" rel="noopener">Abrir en App Store</a>
+            </div>
+            <div class="store">
+              <div class="qr"><img src="assets/qr-playstore.png" alt="Código QR para descargar en Google Play" /></div>
+              <div class="name">▶ Google Play</div>
+              <div class="sub">Android</div>
+              <a class="link" href="https://play.google.com/store/apps/details?id=co.edu.utp.scanner_utp&pli=1" target="_blank" rel="noopener">Abrir en Google Play</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. GLOSARIO -->
+      <section id="glosario">
+        <div class="sec-head"><div class="num">3</div><h2>Glosario</h2></div>
+        <div class="card">
+          <p class="muted" style="margin-top:0">Palabras que aparecen en este manual, explicadas en lenguaje sencillo.</p>
+          <dl class="glossary">
+            <div class="gitem"><dt>Evento</dt><dd>Es el <b>contenedor principal</b>: agrupa varias actividades bajo un mismo nombre. Por ejemplo, un congreso, un diplomado o una semana cultural.</dd></div>
+            <div class="gitem"><dt>Actividad</dt><dd>Cada <b>parte que compone un evento</b> (una charla, una clase, un taller). A cada actividad se le toma la asistencia por separado.</dd></div>
+            <div class="gitem"><dt>Participante / Asistente</dt><dd>La persona <b>inscrita</b> en un evento que asiste a sus actividades.</dd></div>
+            <div class="gitem"><dt>Coordinador</dt><dd>La persona <b>autorizada para tomar la asistencia</b> de una actividad.</dd></div>
+            <div class="gitem"><dt>Inscripción</dt><dd>El <b>registro previo</b> de una persona en un evento; es quedar en la lista de asistentes.</dd></div>
+            <div class="gitem"><dt>Código QR de ingreso</dt><dd>Una imagen cuadrada de puntos, <b>propia de cada participante</b>. El Coordinador la escanea con la cámara para registrar la asistencia, igual que el código de un boleto.</dd></div>
+            <div class="gitem"><dt>Cédula amarilla</dt><dd>La cédula de ciudadanía <b>tradicional</b> (la de cartón plastificado).</dd></div>
+            <div class="gitem"><dt>Cédula digital</dt><dd>La <b>nueva</b> cédula en formato tarjeta (plástico rígido), con los datos en el reverso.</dd></div>
+            <div class="gitem"><dt>Carnet UTP</dt><dd>El <b>carné institucional</b> de la Universidad que identifica a estudiantes y empleados.</dd></div>
+            <div class="gitem"><dt>Asistencia</dt><dd>El <b>registro que confirma</b> que una persona estuvo presente en una actividad.</dd></div>
+            <div class="gitem"><dt>Aforo</dt><dd>La <b>cantidad de personas registradas</b> frente al total de inscritos.</dd></div>
+            <div class="gitem"><dt>Términos y condiciones</dt><dd>La <b>autorización</b> que das para que la Universidad use tus datos personales conforme a la ley.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 3. OBJETIVOS -->
       <section id="objetivos">
-        <div class="sec-head"><div class="num">2</div><h2>Objetivos del aplicativo</h2></div>
+        <div class="sec-head"><div class="num">4</div><h2>Objetivos del aplicativo</h2></div>
         <div class="card">
           <h3>Objetivo general</h3>
-          <p class="lead">Facilitar y agilizar la consulta de eventos y la toma de asistencia de sus participantes desde un dispositivo móvil, eliminando el registro en papel y manteniendo la información centralizada y disponible en tiempo real.</p>
+          <p class="lead">Facilitar y agilizar la consulta de los eventos en los que el usuario ya está inscrito y la toma de asistencia de sus participantes desde un dispositivo móvil, eliminando el registro en papel y manteniendo la información centralizada y disponible en tiempo real.</p>
           <h3>Objetivos específicos</h3>
-          <div class="goal"><div class="g">📅</div><div>Permitir al <b>participante</b> consultar sus eventos y obtener su <b>QR personal de ingreso</b>.</div></div>
-          <div class="goal"><div class="g">✅</div><div>Permitir al <b>personal de apoyo</b> registrar la asistencia mediante <b>escaneo de QR</b>, <b>lectura de documento</b> o <b>marcado en lista</b>.</div></div>
+          <div class="goal"><div class="g">📅</div><div>Permitir al <b>participante</b> consultar los eventos en los que ya está inscrito y obtener su <b>QR personal de ingreso</b>.</div></div>
+          <div class="goal"><div class="g">✅</div><div>Permitir al <b>Coordinador</b> registrar la asistencia mediante <b>escaneo de QR</b>, <b>lectura de documento</b> o <b>marcado en lista</b>.</div></div>
           <div class="goal"><div class="g">🪪</div><div>Reducir errores de identificación leyendo automáticamente el documento del asistente.</div></div>
           <div class="goal"><div class="g">🔎</div><div>Mantener la <b>trazabilidad</b> de cada registro y permitir <b>anular</b> asistencias hechas por error.</div></div>
         </div>
@@ -294,16 +386,16 @@
 
       <!-- 3. ROLES -->
       <section id="roles">
-        <div class="sec-head"><div class="num">3</div><h2>Roles, permisos y funciones</h2></div>
+        <div class="sec-head"><div class="num">5</div><h2>Roles, permisos y funciones</h2></div>
         <div class="card">
-          <p>El aplicativo determina lo que cada usuario puede hacer según el <b>permiso asignado en cada actividad</b>. Un mismo usuario puede ser <b>Participante</b> en unos eventos y <b>personal de apoyo</b> en otros.</p>
+          <p>El aplicativo determina lo que cada usuario puede hacer según el <b>permiso asignado</b>. Un mismo usuario puede ser <b>Participante</b> en unos eventos y <b>Coordinador</b> en otros.</p>
 
           <div class="role">
             <div class="rh"><div class="ic">🎓</div><b>Participante / Asistente</b></div>
             <div class="rb">
               <ul>
                 <li>Ver el listado de eventos disponibles.</li>
-                <li>Ver el detalle de un evento y sus sesiones.</li>
+                <li>Ver el detalle de un evento y sus actividades.</li>
                 <li>Ver y presentar su <b>código QR personal</b>.</li>
                 <li>Consultar su perfil y eventos inscritos.</li>
               </ul>
@@ -311,12 +403,12 @@
           </div>
 
           <div class="role">
-            <div class="rh"><div class="ic">🧑‍💼</div><b>Staff / Coordinador (toma de asistencia)</b></div>
+            <div class="rh"><div class="ic">🧑‍💼</div><b>Coordinador (toma de asistencia)</b></div>
             <div class="rb">
               <ul>
                 <li>Ver las actividades que puede gestionar.</li>
                 <li>Ver el avance de asistencia registrada.</li>
-                <li>Abrir las sesiones de la actividad.</li>
+                <li>Abrir las actividades del evento.</li>
                 <li>Registrar asistencia escaneando el <b>QR</b>.</li>
                 <li>Registrar asistencia por <b>documento de identidad</b>.</li>
                 <li>Marcar y desmarcar asistencia en la lista.</li>
@@ -332,7 +424,7 @@
 
       <!-- 4. AUTENTICACIÓN -->
       <section id="auth">
-        <div class="sec-head"><div class="num">4</div><h2>Autenticación: cómo ingresar</h2></div>
+        <div class="sec-head"><div class="num">6</div><h2>Autenticación: “cómo ingresar”</h2></div>
         <div class="card">
           <ol class="steps">
             <li>Abre la aplicación <b>RAE</b> en tu dispositivo móvil.</li>
@@ -351,7 +443,7 @@
 
       <!-- 5. PARTICIPANTE -->
       <section id="participante">
-        <div class="sec-head"><div class="num">5</div><h2>Funciones · Participante</h2></div>
+        <div class="sec-head"><div class="num">7</div><h2>Funciones · Participante</h2></div>
 
         <div class="card">
           <h3>A. Ver y filtrar eventos</h3>
@@ -373,28 +465,28 @@
             <figure class="shot"><div class="phone"><img src="assets/detalleventolistaactividades.PNG" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Filtra por Todos · Hoy · Próximas.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/verqrdetalleactividad.PNG" alt="Detalle de la actividad"></div><figcaption><b>Detalle de la actividad</b>Incluye tu código QR de ingreso.</figcaption></figure>
           </div>
-          <div class="callout"><span class="i">📲</span><div>Si no tienes tu QR a la mano, el personal de apoyo también puede registrar tu asistencia con tu <b>número de documento</b>.</div></div>
+          <div class="callout"><span class="i">📲</span><div>Si no tienes tu QR a la mano, el Coordinador también puede registrar tu asistencia con tu <b>número de documento</b>.</div></div>
         </div>
       </section>
 
       <!-- 6. STAFF -->
       <section id="staff">
-        <div class="sec-head"><div class="num">6</div><h2>Funciones · Staff (toma de asistencia)</h2></div>
+        <div class="sec-head"><div class="num">8</div><h2>Funciones · Coordinador (toma de asistencia)</h2></div>
 
         <div class="card">
-          <h3>A. Encontrar el evento y sus sesiones</h3>
-          <p>Para tomar asistencia, abre <b>Registrar asistencia</b> y busca el evento en el listado. Al seleccionarlo verás el <b>detalle del evento</b> con el avance de asistencia (registrados / libres / total inscritos), sus <b>sesiones</b> y, al abrir una sesión, su <b>detalle</b>.</p>
+          <h3>A. Encontrar el evento y sus actividades</h3>
+          <p>Para tomar asistencia, abre <b>Registrar asistencia</b> y busca el evento en el listado. Al seleccionarlo verás el <b>detalle del evento</b> con el avance de asistencia (registrados / libres / total inscritos), sus <b>actividades</b> y, al abrir una actividad, su <b>detalle</b>.</p>
           <div class="gallery">
             <figure class="shot"><div class="phone"><img src="assets/registrarasistenciacoordinador.PNG" alt="Registrar asistencia"></div><figcaption><b>Registrar asistencia</b>Busca y selecciona el evento.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventocoordinador.PNG" alt="Detalle del evento (staff)"></div><figcaption><b>Detalle del evento</b>Avance de asistencia registrada.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventoactividadescoordinador.PNG" alt="Sesiones del evento"></div><figcaption><b>Sesiones del evento</b>Cada sesión tiene su botón Registrar asistencia.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleactividad.PNG" alt="Detalle de la sesión"></div><figcaption><b>Detalle de la sesión</b>Información de la sesión seleccionada.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalleeventocoordinador.PNG" alt="Detalle del evento (coordinador)"></div><figcaption><b>Detalle del evento</b>Avance de asistencia registrada.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalleeventoactividadescoordinador.PNG" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Cada actividad tiene su botón Registrar asistencia.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalleactividad.PNG" alt="Detalle de la actividad"></div><figcaption><b>Detalle de la actividad</b>Información de la actividad seleccionada.</figcaption></figure>
           </div>
         </div>
 
         <div class="card">
           <h3>B. Elegir el método de registro</h3>
-          <p>En la sesión, toca <b>“Registrar asistencia”</b> y elige el método. También puedes usar la <b>modalidad virtual</b>. Tras elegir el método, selecciona la sesión sobre la que vas a registrar.</p>
+          <p>En la actividad, toca <b>“Registrar asistencia”</b> y elige el método. También puedes usar la <b>modalidad virtual</b>. Tras elegir el método, selecciona la actividad sobre la que vas a registrar.</p>
           <ol class="steps">
             <li><b>Escanear código QR</b> — lee el QR del asistente.</li>
             <li><b>Escanear documento de identidad</b> — cédula física, cédula digital o carnet UTP.</li>
@@ -403,13 +495,24 @@
           <div class="gallery">
             <figure class="shot"><div class="phone"><img src="assets/metodosderegistro.PNG" alt="Métodos de registro"></div><figcaption><b>Métodos de registro</b>QR, documento o lista.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/metodosregistro2.PNG" alt="Modalidad virtual"></div><figcaption><b>Modalidad virtual</b>Generar link o QR de asistencia.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/listadeactividadescoordinador.PNG" alt="Selecciona la sesión"></div><figcaption><b>Selecciona la sesión</b>Tras elegir el método, elige la sesión a registrar.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/listadeactividadescoordinador.PNG" alt="Selecciona la actividad"></div><figcaption><b>Selecciona la actividad</b>Tras elegir el método, elige la actividad a registrar.</figcaption></figure>
           </div>
         </div>
 
         <div class="card">
           <h3>C. Registrar por QR o por documento</h3>
-          <p>Apunta la cámara al <b>QR del asistente</b> o encuadra su <b>documento</b>. Al leerlo, confirma los datos y se registra la asistencia. El aplicativo reconoce <b>cédula amarilla (PDF417)</b>, <b>cédula digital (MRZ)</b> y <b>carnet UTP (Code128)</b>.</p>
+          <p>Apunta la cámara al <b>QR del asistente</b> o encuadra su <b>documento</b>. Al leerlo, confirma los datos y se registra la asistencia. El aplicativo reconoce la <b>cédula amarilla</b>, la <b>cédula digital</b> y el <b>carnet UTP</b>.</p>
+          <div class="callout"><span class="i">📇</span><div>Se registra <b>el reverso</b> del documento —la cara que tiene el código—. Encuádralo completo dentro del recuadro.</div></div>
+          <div class="docs-guide">
+            <figure class="docfig">
+              <div class="docimg"><span class="badge">✓ Registra esta cara</span><img src="assets/amarilla1.png" alt="Reverso de la cédula amarilla con el código de barras"></div>
+              <figcaption><b>Cédula amarilla</b>El reverso: la cara con el código de barras grande.</figcaption>
+            </figure>
+            <figure class="docfig">
+              <div class="docimg"><span class="badge">✓ Registra esta cara</span><img src="assets/digital.jpg" alt="Reverso de la cédula digital con el código y las líneas de texto"></div>
+              <figcaption><b>Cédula digital</b>El reverso: la cara con el código y las líneas de texto.</figcaption>
+            </figure>
+          </div>
           <div class="gallery">
             <figure class="shot"><div class="phone"><img src="assets/lectorqrdocumento.PNG" alt="Lector de QR / documento"></div><figcaption><b>Lectura con la cámara</b>Guía para encuadrar QR o documento.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/confirmarasistencia1.PNG" alt="Confirmar asistencia"></div><figcaption><b>Confirmar datos</b>Verifica nombre y documento.</figcaption></figure>
@@ -417,7 +520,7 @@
             <figure class="shot"><div class="phone"><img src="assets/asistenciaregistrada1.PNG" alt="Asistencia registrada"></div><figcaption><b>Asistencia registrada</b>Nombre, documento y hora.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/asistenciaregistrada2.PNG" alt="Asistencia registrada (2)"></div><figcaption><b>Aforo actualizado</b>Continúa con el siguiente asistente.</figcaption></figure>
           </div>
-          <div class="callout tip"><span class="i">💡</span><div>Procura buena iluminación y mantén el documento estable dentro del recuadro. El lector intenta primero el código de barras y, si no lo detecta, lee la zona MRZ del reverso.</div></div>
+          <div class="callout tip"><span class="i">💡</span><div>Procura buena iluminación y mantén el documento estable dentro del recuadro. Para la cédula amarilla y el carnet, encuadra la cara con el código de barras; para la cédula digital, muestra el reverso.</div></div>
         </div>
 
         <div class="card">
@@ -434,7 +537,7 @@
 
       <!-- 7. PERFIL -->
       <section id="perfil">
-        <div class="sec-head"><div class="num">7</div><h2>Mi perfil</h2></div>
+        <div class="sec-head"><div class="num">9</div><h2>Mi perfil</h2></div>
         <div class="card">
           <p>En la pestaña <b>Perfil</b> verás tus datos (nombre, documento, correo, celular) y el conteo de <b>eventos inscritos</b> y <b>asistidos</b>. Desde aquí también puedes consultar los términos y condiciones y <b>cerrar sesión</b>.</p>
           <div class="gallery">
@@ -446,29 +549,16 @@
 
       <!-- 8. FAQ -->
       <section id="faq">
-        <div class="sec-head"><div class="num">8</div><h2>Preguntas frecuentes</h2></div>
+        <div class="sec-head"><div class="num">10</div><h2>Preguntas frecuentes</h2></div>
 
         <details class="faq"><summary>¿Con qué usuario y contraseña ingreso?</summary><div class="a">Con tus credenciales institucionales de la UTP (las mismas del portal de la Universidad).</div></details>
         <details class="faq"><summary>No veo la opción para tomar asistencia en un evento. ¿Por qué?</summary><div class="a">Porque no tienes asignado el permiso de asistencia en esa actividad. Ese permiso se otorga por actividad; solicítalo al responsable del evento.</div></details>
         <details class="faq"><summary>El asistente no tiene su QR a la mano. ¿Cómo registro su asistencia?</summary><div class="a">Usa “Escanear documento de identidad” o “Marcar en lista” buscándolo por nombre o documento.</div></details>
-        <details class="faq"><summary>El escáner no reconoce la cédula.</summary><div class="a">Verifica la iluminación y que el documento esté completo dentro del recuadro. Para la cédula amarilla y el carnet UTP escanea el código de barras; para la cédula digital, el reverso (zona MRZ). Si persiste, usa “Marcar en lista”.</div></details>
-        <details class="faq"><summary>Aparece “Ya registrado” al escanear.</summary><div class="a">La persona ya tiene la asistencia marcada en esa sesión. No es necesario registrarla de nuevo.</div></details>
+        <details class="faq"><summary>El escáner no reconoce la cédula.</summary><div class="a">Verifica la iluminación y que el documento esté completo dentro del recuadro. Para la cédula amarilla y el carnet UTP, encuadra la cara con el código de barras; para la cédula digital, muestra el reverso. Si persiste, usa “Marcar en lista”.</div></details>
+        <details class="faq"><summary>Aparece “Ya registrado” al escanear.</summary><div class="a">La persona ya tiene la asistencia marcada en esa actividad. No es necesario registrarla de nuevo.</div></details>
         <details class="faq"><summary>Aparece “No inscrito”.</summary><div class="a">La persona no figura inscrita en la actividad. Verifica con el responsable del evento.</div></details>
         <details class="faq"><summary>Registré a alguien por error. ¿Puedo deshacerlo?</summary><div class="a">Sí. En “Marcar en lista” desmarca a la persona y guarda; luego confirma la eliminación.</div></details>
         <details class="faq"><summary>¿Necesito internet?</summary><div class="a">Sí. El aplicativo consulta y registra la información en línea.</div></details>
-      </section>
-
-      <!-- 9. SOPORTE -->
-      <section id="soporte">
-        <div class="sec-head"><div class="num">9</div><h2>Soporte y ayuda</h2></div>
-        <div class="support">
-          <div class="ic">✉️</div>
-          <div>
-            <div style="font-size:18px;font-weight:600;margin-bottom:4px">¿Necesitas ayuda?</div>
-            Para soporte, dudas o reporte de incidentes, escribe al correo
-            <a href="mailto:soporte@utp.edu.co">soporte@utp.edu.co</a>.
-          </div>
-        </div>
       </section>
 
       <!-- CIERRE -->
