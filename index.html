@@ -253,10 +253,12 @@
         <li><a href="#objetivos"><span class="n">4</span> Objetivos</a></li>
         <li><a href="#roles"><span class="n">5</span> Roles y permisos</a></li>
         <li><a href="#auth"><span class="n">6</span> Autenticación</a></li>
-        <li><a href="#participante"><span class="n">7</span> Funciones · Participante</a></li>
-        <li><a href="#staff"><span class="n">8</span> Funciones · Coordinador</a></li>
-        <li><a href="#perfil"><span class="n">9</span> Perfil</a></li>
-        <li><a href="#faq"><span class="n">10</span> Preguntas frecuentes</a></li>
+        <li><a href="#inicio"><span class="n">7</span> Inicio</a></li>
+        <li><a href="#participante"><span class="n">8</span> Funciones · Participante</a></li>
+        <li><a href="#staff"><span class="n">9</span> Funciones · Coordinador</a></li>
+        <li><a href="#perfil"><span class="n">10</span> Perfil</a></li>
+        <li><a href="#historial"><span class="n">11</span> Historial de eventos</a></li>
+        <li><a href="#faq"><span class="n">12</span> Preguntas frecuentes</a></li>
       </ul>
     </nav>
     <div class="foot">
@@ -264,7 +266,7 @@
         <img class="foot-logo gtisi" src="assets/logo.svg" alt="GTISI · Gestión de Tecnologías" />
         <img class="foot-logo" src="assets/ministerioeducacion.png" alt="Ministerio de Educación Nacional" />
       </div>
-      <div>2026 · Versión 1.0</div>
+      <div>2026 · Versión 1.1</div>
     </div>
   </aside>
 
@@ -280,10 +282,12 @@
         <option value="#objetivos">4 · Objetivos</option>
         <option value="#roles">5 · Roles y permisos</option>
         <option value="#auth">6 · Autenticación</option>
-        <option value="#participante">7 · Participante</option>
-        <option value="#staff">8 · Coordinador</option>
-        <option value="#perfil">9 · Perfil</option>
-        <option value="#faq">10 · Preguntas frecuentes</option>
+        <option value="#inicio">7 · Inicio</option>
+        <option value="#participante">8 · Participante</option>
+        <option value="#staff">9 · Coordinador</option>
+        <option value="#perfil">10 · Perfil</option>
+        <option value="#historial">11 · Historial de eventos</option>
+        <option value="#faq">12 · Preguntas frecuentes</option>
       </select>
     </div>
 
@@ -300,7 +304,7 @@
         </div>
         <div class="meta">
           <div>Año <b>2026</b></div>
-          <div>Versión <b>1.0</b></div>
+          <div>Versión <b>1.1</b></div>
         </div>
       </div>
     </header>
@@ -433,69 +437,90 @@
             <li>Toca el botón <b>“Ingresar”</b>.</li>
           </ol>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/login.PNG" alt="Inicio de sesión"></div><figcaption><b>Inicio de sesión</b>Usuario, contraseña y aceptación de términos.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/aceptaterminos1.PNG" alt="Términos y condiciones"></div><figcaption><b>Términos y condiciones</b>Tratamiento de datos personales (Ley 1581).</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/login-nuevo.png" alt="Inicio de sesión"></div><figcaption><b>Inicio de sesión</b>Usuario, contraseña y aceptación de términos.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/terminos-nuevo.png" alt="Términos y condiciones"></div><figcaption><b>Términos y condiciones</b>Tratamiento de datos personales (Ley 1581).</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/aceptatermino2.PNG" alt="Términos y condiciones, detalle"></div><figcaption><b>Permisos y derechos</b>Detalle de los datos que se utilizan.</figcaption></figure>
           </div>
-          <div class="callout tip"><span class="i">✅</span><div>Tras ingresar correctamente verás la pantalla principal con las pestañas <b>Inicio</b>, <b>Eventos</b>, <b>Mis eventos</b> y <b>Perfil</b>.</div></div>
+          <div class="callout tip"><span class="i">✅</span><div>Tras ingresar correctamente verás la pantalla principal con las pestañas <b>Inicio</b>, <b>Asistencia</b>, <b>Mis eventos</b> y <b>Perfil</b>.</div></div>
         </div>
       </section>
 
-      <!-- 5. PARTICIPANTE -->
+      <!-- 7. INICIO -->
+      <section id="inicio">
+        <div class="sec-head"><div class="num">7</div><h2>Inicio</h2></div>
+        <div class="card">
+          <p class="lead" style="margin-top:0">La pestaña <b>Inicio</b> es la primera pantalla al abrir la aplicación. Da la bienvenida al portal RAE y reúne, en un solo lugar, los eventos más relevantes para ti. Funciona <b>con o sin sesión iniciada</b>: sin sesión muestra los eventos públicos; al iniciar sesión añade tus eventos personales.</p>
+          <h3>A. Qué encuentras en Inicio</h3>
+          <ul>
+            <li><b>Mis eventos más recientes</b> — los eventos en los que estás inscrito (solo con sesión iniciada).</li>
+            <li><b>Próximos eventos</b> — eventos públicos abiertos a la comunidad, ordenados por fecha.</li>
+            <li><b>Eventos más solicitados</b> — los eventos con mayor demanda.</li>
+          </ul>
+          <p>En cada bloque, el enlace <b>“Ver todos”</b> abre el listado completo, donde puedes <b>buscar</b>, alternar entre <b>Próximos</b> y <b>Más solicitados</b> y <b>filtrar por rango de fechas</b>.</p>
+          <div class="gallery">
+            <figure class="shot"><div class="phone"><img src="assets/home.png" alt="Pantalla de Inicio con sesión"></div><figcaption><b>Inicio (con sesión)</b>Tus eventos recientes y los públicos.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/home-nolog.png" alt="Pantalla de Inicio sin sesión"></div><figcaption><b>Inicio (sin sesión)</b>Próximos y más solicitados; invita a iniciar sesión.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/eventos-publicos.png" alt="Listado de eventos públicos"></div><figcaption><b>Eventos · Próximos</b>Listado completo con búsqueda.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/eventos-solicitados.png" alt="Eventos más solicitados"></div><figcaption><b>Eventos · Más solicitados</b>Los de mayor demanda.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/filtro-fechas.png" alt="Filtro por rango de fechas"></div><figcaption><b>Filtro por fecha</b>Acota los eventos por rango.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalle-evento-publico.png" alt="Detalle de un evento público"></div><figcaption><b>Detalle del evento</b>Información, fechas, encargado y actividades.</figcaption></figure>
+          </div>
+          <div class="callout"><span class="i">🧭</span><div>La barra inferior tiene cuatro pestañas: <b>Inicio</b>, <b>Asistencia</b> (registrar asistencia), <b>Mis eventos</b> y <b>Perfil</b>.</div></div>
+        </div>
+      </section>
+
+      <!-- 8. PARTICIPANTE -->
       <section id="participante">
-        <div class="sec-head"><div class="num">7</div><h2>Funciones · Participante</h2></div>
+        <div class="sec-head"><div class="num">8</div><h2>Funciones · Participante</h2></div>
 
         <div class="card">
-          <h3>A. Ver y filtrar eventos</h3>
-          <p>En la pestaña <b>Eventos</b> se muestra el listado de eventos disponibles. Puedes <b>buscar</b> por nombre, tipo o lugar, y <b>filtrar</b> con los chips de tipo o por rango de fechas.</p>
+          <h3>A. Ver y filtrar mis eventos</h3>
+          <p>En la pestaña <b>Mis eventos</b> se muestran los eventos en los que estás inscrito. Puedes <b>buscar</b> por nombre, <b>filtrar por tipo</b> (Generales, Bienestar, Extensión) o por <b>rango de fechas</b>. Si aún no has iniciado sesión, la pestaña te invitará a autenticarte.</p>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/miseventosnolog.PNG" alt="Sin inicio de sesión"></div><figcaption><b>Sin inicio de sesión</b>Vista de Mis eventos antes de iniciar sesión.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/miseventosparticipante.PNG" alt="Mis eventos"></div><figcaption><b>Mis eventos</b>Eventos en los que estás inscrito.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/filtroeventofechas.PNG" alt="Filtro por fecha"></div><figcaption><b>Filtro por fecha</b>Acota los eventos por rango de fechas.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/filtroeventotags.PNG" alt="Listado por tipo"></div><figcaption><b>Listado por tipo</b>Chips para filtrar por categoría del evento.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/miseventos-nolog.png" alt="Sin inicio de sesión"></div><figcaption><b>Sin inicio de sesión</b>Vista de Mis eventos antes de iniciar sesión.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/miseventos.png" alt="Mis eventos"></div><figcaption><b>Mis eventos</b>Eventos en los que estás inscrito.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/busqueda-tipos.png" alt="Búsqueda por tipo"></div><figcaption><b>Buscar por tipo</b>Filtra por categoría del evento.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/filtro-fechas.png" alt="Filtro por fecha"></div><figcaption><b>Filtro por fecha</b>Acota los eventos por rango de fechas.</figcaption></figure>
           </div>
         </div>
 
         <div class="card">
           <h3>B. Detalle del evento y mi código QR</h3>
-          <p>Al tocar un evento verás su información (tipo, fechas, encargado, lugar). Al desplazarte hacia abajo encontrarás las <b>actividades</b> del evento; y al abrir una de ellas verás su <b>detalle con tu código QR personal de ingreso</b>. <b>Este es el código que debes presentar</b> para que te registren la asistencia.</p>
+          <p>Al tocar un evento verás su información (tipo, fechas, encargado, lugar) y tu <b>código QR personal de ingreso</b>. <b>Este es el código que debes presentar</b> para que te registren la asistencia. Al desplazarte hacia abajo encontrarás las <b>actividades</b> del evento, que puedes filtrar por <b>Todos · Hoy · Próximas</b>.</p>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventoparticipante.PNG" alt="Detalle del evento"></div><figcaption><b>Detalle del evento</b>Descripción, fechas, encargado y lugar.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventoparticipante2.PNG" alt="Detalle del evento parte 2"></div><figcaption><b>Detalle del evento · parte 2</b>Desplázate hacia abajo para ver más.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleventolistaactividades.PNG" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Filtra por Todos · Hoy · Próximas.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/verqrdetalleactividad.PNG" alt="Detalle de la actividad"></div><figcaption><b>Detalle de la actividad</b>Incluye tu código QR de ingreso.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalle-evento-qr.png" alt="Detalle del evento con QR"></div><figcaption><b>Detalle del evento</b>Descripción, estado y tu QR de ingreso.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/actividades-evento.png" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Filtra por Todos · Hoy · Próximas.</figcaption></figure>
           </div>
           <div class="callout"><span class="i">📲</span><div>Si no tienes tu QR a la mano, el Coordinador también puede registrar tu asistencia con tu <b>número de documento</b>.</div></div>
         </div>
       </section>
 
-      <!-- 6. STAFF -->
+      <!-- 9. STAFF -->
       <section id="staff">
-        <div class="sec-head"><div class="num">8</div><h2>Funciones · Coordinador (toma de asistencia)</h2></div>
+        <div class="sec-head"><div class="num">9</div><h2>Funciones · Coordinador (toma de asistencia)</h2></div>
 
         <div class="card">
           <h3>A. Encontrar el evento y sus actividades</h3>
-          <p>Para tomar asistencia, abre <b>Registrar asistencia</b> y busca el evento en el listado. Al seleccionarlo verás el <b>detalle del evento</b> con el avance de asistencia (registrados / libres / total inscritos), sus <b>actividades</b> y, al abrir una actividad, su <b>detalle</b>.</p>
+          <p>Para tomar asistencia, entra a la pestaña <b>Asistencia</b> y busca el evento o actividad en el listado. Al seleccionarlo verás el <b>detalle</b> con el avance de asistencia (registrados / libres / total inscritos) y, más abajo, las <b>actividades del evento</b>, cada una con su botón para registrar.</p>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/registrarasistenciacoordinador.PNG" alt="Registrar asistencia"></div><figcaption><b>Registrar asistencia</b>Busca y selecciona el evento.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventocoordinador.PNG" alt="Detalle del evento (coordinador)"></div><figcaption><b>Detalle del evento</b>Avance de asistencia registrada.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleeventoactividadescoordinador.PNG" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Cada actividad tiene su botón Registrar asistencia.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/detalleactividad.PNG" alt="Detalle de la actividad"></div><figcaption><b>Detalle de la actividad</b>Información de la actividad seleccionada.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/registrar-asistencia.png" alt="Registrar asistencia"></div><figcaption><b>Registrar asistencia</b>Busca y selecciona el evento o actividad.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/detalle-coordinador.png" alt="Detalle de la actividad (coordinador)"></div><figcaption><b>Detalle de la actividad</b>Avance de asistencia registrada.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/actividades-coordinador.png" alt="Actividades del evento"></div><figcaption><b>Actividades del evento</b>Cada una tiene su botón Registrar asistencia.</figcaption></figure>
           </div>
         </div>
 
         <div class="card">
           <h3>B. Elegir el método de registro</h3>
-          <p>En la actividad, toca <b>“Registrar asistencia”</b> y elige el método. También puedes usar la <b>modalidad virtual</b>. Tras elegir el método, selecciona la actividad sobre la que vas a registrar.</p>
+          <p>Toca <b>“Registrar la asistencia”</b> y elige cómo se registrará. En modalidad presencial hay cuatro opciones. Tras elegir el método, selecciona la <b>sesión/actividad</b> sobre la que vas a registrar.</p>
           <ol class="steps">
             <li><b>Escanear código QR</b> — lee el QR del asistente.</li>
             <li><b>Escanear documento de identidad</b> — cédula física, cédula digital o carnet UTP.</li>
             <li><b>Marcar en lista</b> — marca manualmente sobre los inscritos.</li>
+            <li><b>Subir asistencia</b> — adjunta un archivo (PDF, JPG o PNG) con el soporte de asistencia.</li>
           </ol>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/metodosderegistro.PNG" alt="Métodos de registro"></div><figcaption><b>Métodos de registro</b>QR, documento o lista.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/metodosregistro2.PNG" alt="Modalidad virtual"></div><figcaption><b>Modalidad virtual</b>Generar link o QR de asistencia.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/listadeactividadescoordinador.PNG" alt="Selecciona la actividad"></div><figcaption><b>Selecciona la actividad</b>Tras elegir el método, elige la actividad a registrar.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/metodos-registro.png" alt="Métodos de registro"></div><figcaption><b>Métodos de registro</b>QR, documento, lista o subir archivo.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/selector-sesion.png" alt="Selecciona la actividad"></div><figcaption><b>Selecciona la actividad</b>Tras elegir el método, elige la sesión a registrar.</figcaption></figure>
           </div>
         </div>
 
@@ -527,29 +552,49 @@
           <h3>D. Marcar en lista y quitar asistencia</h3>
           <p>En <b>“Marcar en lista”</b> verás los inscritos con una casilla por persona. Marca (asistió) o desmarca (quitar) y toca <b>“Guardar asistencia”</b>. Si vas a quitar asistencias, el aplicativo pedirá <b>confirmación</b> mostrando las personas afectadas. Quitar una asistencia es <b>reversible</b>: puedes volver a registrarla.</p>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/IMG_1432.PNG" alt="Lista de asistencia"></div><figcaption><b>Lista de asistencia</b>Marca o desmarca con la casilla.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/marcarenlista-verinscritos.PNG" alt="Ver inscritos"></div><figcaption><b>Ver inscritos</b>Buscar por nombre o documento.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/lista-asistencia.png" alt="Lista de asistencia"></div><figcaption><b>Lista de asistencia</b>Busca por nombre o documento y marca con la casilla.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/asistenciamultiple1.PNG" alt="Asistencia guardada"></div><figcaption><b>Asistencia guardada</b>Confirmación del registro.</figcaption></figure>
             <figure class="shot"><div class="phone"><img src="assets/eliminarasistencia.PNG" alt="Quitar asistencia"></div><figcaption><b>Quitar asistencia</b>Confirmación antes de anular.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 7. PERFIL -->
+      <!-- 10. PERFIL -->
       <section id="perfil">
-        <div class="sec-head"><div class="num">9</div><h2>Mi perfil</h2></div>
+        <div class="sec-head"><div class="num">10</div><h2>Mi perfil</h2></div>
         <div class="card">
-          <p>En la pestaña <b>Perfil</b> verás tus datos (nombre, documento, correo, celular) y el conteo de <b>eventos inscritos</b> y <b>asistidos</b>. Desde aquí también puedes consultar los términos y condiciones y <b>cerrar sesión</b>.</p>
+          <p>En la pestaña <b>Perfil</b> verás tus datos (nombre, documento, correo, celular) y el conteo de <b>eventos inscritos</b> y <b>asistidos</b>. Desde aquí también puedes activar el <b>modo oscuro</b>, abrir tu <b>Historial de eventos</b>, consultar los <b>términos y condiciones</b> y <b>cerrar sesión</b>.</p>
           <div class="gallery">
-            <figure class="shot"><div class="phone"><img src="assets/perfillog.PNG" alt="Perfil"></div><figcaption><b>Perfil del usuario</b>Datos personales.</figcaption></figure>
-            <figure class="shot"><div class="phone"><img src="assets/perfillog3.PNG" alt="Opciones del perfil"></div><figcaption><b>Opciones</b>Eventos, términos y cierre de sesión.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/perfil.png" alt="Perfil"></div><figcaption><b>Perfil del usuario</b>Datos personales y conteo de eventos.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/perfil-detalle.png" alt="Opciones del perfil"></div><figcaption><b>Opciones</b>Historial, modo oscuro, términos y cierre de sesión.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 8. FAQ -->
+      <!-- 11. HISTORIAL -->
+      <section id="historial">
+        <div class="sec-head"><div class="num">11</div><h2>Historial de eventos</h2></div>
+        <div class="card">
+          <p class="lead" style="margin-top:0">Desde <b>Perfil → Historial de eventos</b> consultas <b>todos los eventos</b> en los que has participado a lo largo del tiempo, tanto los vigentes como los ya finalizados. Es la vista ideal para revisar tu trayectoria de participación.</p>
+          <h3>Cómo se organiza</h3>
+          <ul>
+            <li><b>Buscador</b> — encuentra un evento por su nombre.</li>
+            <li><b>Filtro por estado</b> — alterna entre <b>Todos</b>, <b>Activos</b> (vigentes) y <b>Completados</b> (finalizados).</li>
+            <li><b>Filtro por fechas</b> — acota el historial a un rango concreto.</li>
+            <li><b>Contador</b> — muestra el total de eventos según el filtro aplicado.</li>
+          </ul>
+          <p>Cada tarjeta indica el tipo de evento, el lugar, las fechas y su estado (<b>Vigente</b> o <b>Finalizado</b>). Al tocarla se abre el detalle del evento.</p>
+          <div class="gallery">
+            <figure class="shot"><div class="phone"><img src="assets/historial.png" alt="Historial de eventos"></div><figcaption><b>Historial · Todos</b>Todos tus eventos, vigentes y finalizados.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/historial-activos.png" alt="Historial, eventos activos"></div><figcaption><b>Historial · Activos</b>Solo los eventos vigentes.</figcaption></figure>
+            <figure class="shot"><div class="phone"><img src="assets/historial-completados.png" alt="Historial, eventos completados"></div><figcaption><b>Historial · Completados</b>Solo los eventos finalizados.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. FAQ -->
       <section id="faq">
-        <div class="sec-head"><div class="num">10</div><h2>Preguntas frecuentes</h2></div>
+        <div class="sec-head"><div class="num">12</div><h2>Preguntas frecuentes</h2></div>
 
         <details class="faq"><summary>¿Con qué usuario y contraseña ingreso?</summary><div class="a">Con tus credenciales institucionales de la UTP (las mismas del portal de la Universidad).</div></details>
         <details class="faq"><summary>No veo la opción para tomar asistencia en un evento. ¿Por qué?</summary><div class="a">Porque no tienes asignado el permiso de asistencia en esa actividad. Ese permiso se otorga por actividad; solicítalo al responsable del evento.</div></details>
