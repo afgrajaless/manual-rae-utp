@@ -1,5 +1,3 @@
-# Manual de Usuario · RAE UTP
+# manual-rae-utp
 
-Manual de usuario del aplicativo RAE (UTP). Publicado con GitHub Pages.
-
-Abrir: `index.html`
+Contenido retirado.
